@@ -9,19 +9,16 @@ phases:
       - echo Build preparation started
       - chmod +x ./mvnw
       - java -version
-      - ./mvnw --version
   build:
     commands:
       - echo Build started on `date`
       - echo Building the application...
-      - ./mvnw clean compile -X
-      - echo Compilation successful, now packaging...
-      - ./mvnw package -DskipTests -X
+      - ./mvnw clean package -DskipTests
       - echo Build completed successfully
+      - ls -la target/
   post_build:
     commands:
       - echo Build completed on `date`
-      - ls -la target/
 artifacts:
   files:
-    - target/*.jar
+    - '**/*'
