@@ -1,19 +1,27 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      java: corretto17
   pre_build:
     commands:
       - echo Build preparation started
       - chmod +x ./mvnw
+      - java -version
+      - ./mvnw --version
   build:
     commands:
       - echo Build started on `date`
       - echo Building the application...
-      - ./mvnw clean package -DskipTests
+      - ./mvnw clean compile -X
+      - echo Compilation successful, now packaging...
+      - ./mvnw package -DskipTests -X
       - echo Build completed successfully
   post_build:
     commands:
       - echo Build completed on `date`
+      - ls -la target/
 artifacts:
   files:
     - target/*.jar
