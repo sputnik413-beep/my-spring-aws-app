@@ -3,8 +3,8 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo Logging in to Amazon ECR...
-      - echo Skipping ECR login for now
+      - echo Build preparation started
+      - chmod +x ./mvnw
   build:
     commands:
       - echo Build started on `date`
@@ -14,7 +14,6 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - echo Skipping Docker operations for now
 artifacts:
   files:
     - target/*.jar
