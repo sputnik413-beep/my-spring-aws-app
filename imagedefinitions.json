@@ -1,0 +1,6 @@
+[
+  {
+    "name": "my-spring-app",
+    "imageUri": "548387265891.dkr.ecr.ap-northeast-1.amazonaws.com/my-spring-app:latest"
+  }
+]

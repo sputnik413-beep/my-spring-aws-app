@@ -8,6 +8,6 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "Hello AWS with AI!";
+        return "Hello AWS with AI! Updated!";
     }
 }

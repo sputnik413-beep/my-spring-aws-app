@@ -11,6 +11,9 @@ phases:
       - mkdir -p target
       - echo "Build completed successfully" > target/build-success.txt
       - echo Build completed successfully
+      - echo Creating imagedefinitions.json for ECS deployment
+      - cp imagedefinitions.json .
 artifacts:
   files:
     - '**/*'
+    - imagedefinitions.json
